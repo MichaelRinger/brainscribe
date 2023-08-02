@@ -7,7 +7,7 @@ import OutputViewer from './output-viewer'
 
 export default function Page() {
     // Step 1 data
-    const [title, setTitle] = useState("Top Travel Destinations for 2023");
+    const [title, setTitle] = useState("");
     const [style, setStyle] = useState(styles[0]);
     const [language, setLanguage] = useState(languages[0]);
     const [step, setStep] = useState(1);
@@ -16,15 +16,12 @@ export default function Page() {
     const [blogPost, setBlogPost] = useState("");
 
     // Step 2 data
-    const [introduction, setIntroduction] = useState("Excitingly introduce the blog post and the upcoming top travel destinations for 2023.");
-    const [mainPart, setMainPart] = useState(`Bali, Indonesia Stunning beaches, vibrant culture, and tropical paradise vibes.
-    Kyoto, Japan Traditional charm meets modernity with temples and beautiful gardens.
-    Barcelona, Spain Breathtaking architecture, art, and delicious cuisine.
-    Cape Town, South Africa Diverse experiences from wildlife safaris to beautiful coastlines.
-    Vancouver, Canada Mountains, water, and outdoor adventures for nature lovers.`);
-    const [conclusion, setConclusion] = useState("Encourage readers to explore these top destinations  and make unforgettable memories in 2023.");
+    const [introduction, setIntroduction] = useState("");
+    const [mainPart, setMainPart] = useState("");
+    const [conclusion, setConclusion] = useState("");
 
     const generateBlogPost = async () => {
+        console.log("Started generating.")
         setGenerating(true)
         const res = await fetch("/api/generate", {
             method: "POST",

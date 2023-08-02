@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 import { classNames } from '../../lib/utils'
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded'
 import { languages, styles } from "../data";
+import Link from "next/link";
 
 
 
@@ -47,10 +48,13 @@ export default function Step1({ title, setTitle, style, setStyle, language, setL
                             </select>
                         </div>
                     </div>
-                    <div className="flex justify-end">
-                        <button onClick={() => validated() ? setStep(2) : null} className={classNames(validated() == false ? "bg-gray-300 border-gray cursor-default" : "bg-black border-black hover:bg-white hover:text-black", " text-white text-sm border-2 py-2 px-4 rounded-full select-none")}>
+                    <div className="flex justify-between">
+                        <Link href="/" className="bg-black cursor-pointer border-black hover:bg-white hover:text-black text-white text-sm border-2 py-2 px-4 rounded-full select-none">
+                            <ArrowForwardRoundedIcon className="rotate-180" /> Back
+                        </Link>
+                        <div onClick={() => validated() ? setStep(2) : null} className={classNames(validated() == false ? "bg-gray-300 border-gray cursor-default" : "bg-black cursor-pointer border-black hover:bg-white hover:text-black", " text-white text-sm border-2 py-2 px-4 rounded-full select-none")}>
                             Next <ArrowForwardRoundedIcon />
-                        </button>
+                        </div>
                     </div>
                 </div>
             </div >
