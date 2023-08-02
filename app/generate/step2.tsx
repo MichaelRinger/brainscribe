@@ -46,7 +46,7 @@ export default function Step2({ introduction, setIntroduction, mainPart, setMain
                                     <ArrowForwardRoundedIcon className="rotate-180" /> Back
                                 </div>
                                 <div onClick={() => validated() ? setDoneWizard(true) : null} className={classNames(validated() == false ? "bg-gray-300 border-gray" : "bg-black border-black hover:bg-white hover:text-black cursor-pointer", " text-white text-sm border-2 py-2 px-4 rounded-full select-none")}>
-                                    Generate <ArrowForwardRoundedIcon />
+                                    Generate
                                 </div>
                             </div></>)
                         : <div className="text-4xl font-light">Generating ...</div>}
